@@ -1,11 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>NHS67 Test</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NHS67 | Northside High School Class of 1967</title>
+  <meta name="description" content="Northside High School Class of 1967 — our class, memories, reunion and digital archive.">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>NORTHSIDE HIGH SCHOOL CLASS OF 1967</h1>
-    <h2>NHS67 WEBSITE TEST</h2>
-    <p>If you can see this, GitHub Pages is working correctly.</p>
+  <header class="hero">
+    <img
+      class="hero-image"
+      src="nhs67-homepage.jpg"
+      alt="Northside High School building"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <nav class="navbar" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="NHS67 Home">
+        <span class="brand-main">NHS<span>67</span></span>
+        <span class="brand-sub">NORTHSIDE HIGH SCHOOL<br>CLASS OF 1967</span>
+      </a>
+
+      <div class="nav-links">
+        <a class="active" href="index.html">HOME</a>
+        <a href="classmates.html">OUR CLASS</a>
+        <a href="reunion.html">REUNION</a>
+        <a href="memories.html">MEMORIES</a>
+        <a href="chat.html">CHAT</a>
+        <a href="media.html">MEDIA</a>
+        <a href="contact.html">CONTACT</a>
+      </div>
+
+      <button class="menu-button" aria-label="Open navigation menu" aria-expanded="false">
+        ☰
+      </button>
+    </nav>
+
+    <main class="hero-content">
+      <div class="school-quote">
+        <p>We'll yell like hell<br>
+        from here to heaven<br>
+        Hurray for the class<br>
+        of '67!</p>
+      </div>
+    </main>
+  </header>
+
+  <section class="welcome">
+    <h1>Welcome, Class of '67</h1>
+    <p>
+      This is our digital home — a place to reconnect with classmates,
+      share memories, celebrate our history, and get ready for our
+      60th reunion.
+    </p>
+
+    <div class="home-cards">
+      <a href="classmates.html">
+        <h2>Our Class</h2>
+        <p>Find classmates and reconnect.</p>
+      </a>
+
+      <a href="reunion.html">
+        <h2>Reunion</h2>
+        <p>Everything you need to know about the 2027 reunion.</p>
+      </a>
+
+      <a href="memories.html">
+        <h2>Memories</h2>
+        <p>Photos, stories and memories from our years together.</p>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>NHS67 • Northside High School • Class of 1967</p>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', open);
+    });
+  </script>
 </body>
 </html>
