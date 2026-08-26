@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NHS67 | Senior Pictures</title>
+  <link rel="stylesheet" href="senior-pictures.css">
+</head>
+<body>
+  <main class="viewer-page">
+    <header class="viewer-header">
+      <h1>NORTHSIDE HIGH SCHOOL — CLASS OF 1967</h1>
+      <h2>Senior Pictures</h2>
+      <p class="intro">Browse the senior-picture pages from the 1967 yearbook. Zoom in and drag the page to examine photographs and names.</p>
+    </header>
+
+    <section class="controls" aria-label="Yearbook controls">
+      <button id="prevBtn" type="button" title="Previous page">← Previous</button>
+      <div class="page-status" aria-live="polite">
+        <strong id="viewerPage">1</strong> of 19
+        <span class="separator">•</span>
+        Yearbook page <strong id="yearbookPage">59</strong>
+      </div>
+      <button id="nextBtn" type="button" title="Next page">Next →</button>
+    </section>
+
+    <section class="zoom-controls" aria-label="Zoom controls">
+      <button id="zoomOutBtn" type="button" title="Zoom out">−</button>
+      <button id="resetBtn" type="button">Reset</button>
+      <button id="zoomInBtn" type="button" title="Zoom in">+</button>
+      <button id="fullscreenBtn" type="button">Full Screen</button>
+    </section>
+
+    <section id="viewer" class="viewer" aria-label="Yearbook page viewer">
+      <div id="canvas" class="canvas">
+        <img id="yearbookImage" src="images/yearbook-page-59.jpg" alt="1967 yearbook senior pictures, yearbook page 59" draggable="false">
+      </div>
+    </section>
+
+    <p class="hint">Tip: When zoomed in, click and drag the page to pan. You can also use your mouse wheel or the + and − keys to zoom.</p>
+  </main>
+
+  <script src="senior-pictures.js"></script>
+</body>
+</html>
