@@ -1,138 +1,116 @@
-const yearbookPages = Array.from({ length: 19 }, (_, i) => 59 + i);
+const pages = Array.from({ length: 19 }, (_, i) => 59 + i);
 
-const viewer = document.getElementById('viewer');
-const canvas = document.getElementById('canvas');
-const image = document.getElementById('yearbookImage');
-const viewerPage = document.getElementById('viewerPage');
-const yearbookPage = document.getElementById('yearbookPage');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
-const zoomInBtn = document.getElementById('zoomInBtn');
-const zoomOutBtn = document.getElementById('zoomOutBtn');
-const resetBtn = document.getElementById('resetBtn');
-const fullscreenBtn = document.getElementById('fullscreenBtn');
-
-let currentIndex = 0;
-let scale = 1;
-let panX = 0;
-let panY = 0;
+let currentPage = 0;
+let zoom = 1;
+let offsetX = 0;
+let offsetY = 0;
 let dragging = false;
 let startX = 0;
 let startY = 0;
-let startPanX = 0;
-let startPanY = 0;
 
-const MIN_SCALE = 1;
-const MAX_SCALE = 5;
-const ZOOM_STEP = 0.25;
+const image = document.getElementById("yearbookImage");
+const viewer = document.getElementById("viewer");
 
-function updateTransform() {
-  canvas.style.transform = `translate(calc(-50% + ${panX}px), calc(-50% + ${panY}px)) scale(${scale})`;
+function displayPage() {
+    image.src = `yearbook-page-${pages[currentPage]}.jpg`;
+    resetView();
 }
 
 function resetView() {
-  scale = 1;
-  panX = 0;
-  panY = 0;
-  updateTransform();
+    zoom = 1;
+    offsetX = 0;
+    offsetY = 0;
+    updateImage();
 }
 
-function loadPage(index) {
-  currentIndex = Math.max(0, Math.min(yearbookPages.length - 1, index));
-  const page = yearbookPages[currentIndex];
-  image.src = `yearbook-page-${page}.jpg`; = `image.src = `yearbook-page-${page}.jpg`;-${page}.jpg`;
-  image.alt = `1967 yearbook senior pictures, yearbook page ${page}`;
-  viewerPage.textContent = currentIndex + 1;
-  yearbookPage.textContent = page;
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex === yearbookPages.length - 1;
-  resetView();
+function updateImage() {
+    image.style.transform =
+        `translate(${offsetX}px, ${offsetY}px) scale(${zoom})`;
 }
 
-function setZoom(nextScale) {
-  const oldScale = scale;
-  scale = Math.max(MIN_SCALE, Math.min(MAX_SCALE, nextScale));
-
-  // Keep the page centered when returning to 1x.
-  if (scale === 1) {
-    panX = 0;
-    panY = 0;
-  } else if (oldScale !== scale) {
-    // Keep the current pan position while zooming.
-    const ratio = scale / oldScale;
-    panX *= ratio;
-    panY *= ratio;
-  }
-  updateTransform();
-}
-
-prevBtn.addEventListener('click', () => loadPage(currentIndex - 1));
-nextBtn.addEventListener('click', () => loadPage(currentIndex + 1));
-zoomInBtn.addEventListener('click', () => setZoom(scale + ZOOM_STEP));
-zoomOutBtn.addEventListener('click', () => setZoom(scale - ZOOM_STEP));
-resetBtn.addEventListener('click', resetView);
-
-viewer.addEventListener('wheel', (event) => {
-  event.preventDefault();
-  setZoom(scale + (event.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP));
-}, { passive: false });
-
-viewer.addEventListener('pointerdown', (event) => {
-  dragging = true;
-  viewer.classList.add('dragging');
-  startX = event.clientX;
-  startY = event.clientY;
-  startPanX = panX;
-  startPanY = panY;
-  viewer.setPointerCapture(event.pointerId);
-});
-
-viewer.addEventListener('pointermove', (event) => {
-  if (!dragging) return;
-  panX = startPanX + (event.clientX - startX);
-  panY = startPanY + (event.clientY - startY);
-  updateTransform();
-});
-
-function stopDragging(event) {
-  dragging = false;
-  viewer.classList.remove('dragging');
-  if (event && viewer.hasPointerCapture(event.pointerId)) {
-    viewer.releasePointerCapture(event.pointerId);
-  }
-}
-
-viewer.addEventListener('pointerup', stopDragging);
-viewer.addEventListener('pointercancel', stopDragging);
-viewer.addEventListener('pointerleave', () => {
-  // Pointer capture keeps dragging active when the pointer briefly leaves the viewer.
-});
-
-fullscreenBtn.addEventListener('click', async () => {
-  try {
-    if (!document.fullscreenElement) {
-      await viewer.requestFullscreen();
-      fullscreenBtn.textContent = 'Exit Full Screen';
-    } else {
-      await document.exitFullscreen();
+function nextPage() {
+    if (currentPage < pages.length - 1) {
+        currentPage++;
+        displayPage();
     }
-  } catch (error) {
-    console.error('Full-screen mode is not available.', error);
-  }
+}
+
+function previousPage() {
+    if (currentPage > 0) {
+        currentPage--;
+        displayPage();
+    }
+}
+
+function zoomIn() {
+    zoom = Math.min(zoom + 0.25, 4);
+    updateImage();
+}
+
+function zoomOut() {
+    zoom = Math.max(zoom - 0.25, 0.5);
+    updateImage();
+}
+
+function resetZoom() {
+    resetView();
+}
+
+document.getElementById("nextBtn").addEventListener("click", nextPage);
+document.getElementById("prevBtn").addEventListener("click", previousPage);
+document.getElementById("zoomInBtn").addEventListener("click", zoomIn);
+document.getElementById("zoomOutBtn").addEventListener("click", zoomOut);
+document.getElementById("resetBtn").addEventListener("click", resetZoom);
+
+image.addEventListener("mousedown", function (event) {
+    if (zoom <= 1) return;
+
+    dragging = true;
+    startX = event.clientX - offsetX;
+    startY = event.clientY - offsetY;
+    image.style.cursor = "grabbing";
 });
 
-document.addEventListener('fullscreenchange', () => {
-  fullscreenBtn.textContent = document.fullscreenElement ? 'Exit Full Screen' : 'Full Screen';
+window.addEventListener("mousemove", function (event) {
+    if (!dragging) return;
+
+    offsetX = event.clientX - startX;
+    offsetY = event.clientY - startY;
+
+    updateImage();
 });
 
-document.addEventListener('keydown', (event) => {
-  if (event.target.matches('input, textarea, select, button')) return;
-
-  if (event.key === 'ArrowLeft') loadPage(currentIndex - 1);
-  if (event.key === 'ArrowRight') loadPage(currentIndex + 1);
-  if (event.key === '+' || event.key === '=') setZoom(scale + ZOOM_STEP);
-  if (event.key === '-' || event.key === '_') setZoom(scale - ZOOM_STEP);
-  if (event.key === '0') resetView();
+window.addEventListener("mouseup", function () {
+    dragging = false;
+    image.style.cursor = "grab";
 });
 
-loadPage(0);
+image.addEventListener("wheel", function (event) {
+    event.preventDefault();
+
+    if (event.deltaY < 0) {
+        zoomIn();
+    } else {
+        zoomOut();
+    }
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "ArrowRight") {
+        nextPage();
+    }
+
+    if (event.key === "ArrowLeft") {
+        previousPage();
+    }
+
+    if (event.key === "+") {
+        zoomIn();
+    }
+
+    if (event.key === "-") {
+        zoomOut();
+    }
+});
+
+displayPage();
