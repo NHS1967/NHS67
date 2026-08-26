@@ -40,7 +40,7 @@ function resetView() {
 function loadPage(index) {
   currentIndex = Math.max(0, Math.min(yearbookPages.length - 1, index));
   const page = yearbookPages[currentIndex];
-  image.src = `image.src = `yearbook-page-${page}.jpg`;-${page}.jpg`;
+  image.src = `yearbook-page-${page}.jpg`; = `image.src = `yearbook-page-${page}.jpg`;-${page}.jpg`;
   image.alt = `1967 yearbook senior pictures, yearbook page ${page}`;
   viewerPage.textContent = currentIndex + 1;
   yearbookPage.textContent = page;
