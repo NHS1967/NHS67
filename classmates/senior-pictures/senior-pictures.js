@@ -95,6 +95,7 @@ fullscreenBtn.addEventListener("click", function () {
 image.addEventListener("mousedown", function (event) {
    
     dragging = true;
+    console.log("DRAG STARTED");
     startX = event.clientX - offsetX;
     startY = event.clientY - offsetY;
     viewer.classList.add("dragging");
