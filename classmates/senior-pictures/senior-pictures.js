@@ -93,8 +93,7 @@ fullscreenBtn.addEventListener("click", function () {
 });
 
 image.addEventListener("mousedown", function (event) {
-    if (zoom <= 1) return;
-
+   
     dragging = true;
     startX = event.clientX - offsetX;
     startY = event.clientY - offsetY;
