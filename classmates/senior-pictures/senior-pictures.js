@@ -1,6 +1,7 @@
 const pages = Array.from({ length: 19 }, (_, i) => 59 + i);
 
 let currentPage = 0;
+let baseScale = 1;
 let zoom = 1;
 let offsetX = 0;
 let offsetY = 0;
@@ -11,36 +12,37 @@ let startY = 0;
 const image = document.getElementById("yearbookImage");
 const viewer = document.getElementById("viewer");
 
-function displayPage() {
-    image.src = `yearbook-page-${pages[currentPage]}.jpg`;
-    resetView();
+function updateImage() {
+    const scale = baseScale * zoom;
+
+    image.style.transform =
+        `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px) scale(${scale})`;
 }
 
-function resetView() {
-    const viewerWidth = viewer.clientWidth;
-    const viewerHeight = viewer.clientHeight;
+function fitPage() {
+    if (!image.naturalWidth || !image.naturalHeight) return;
 
-    const imageWidth = image.naturalWidth;
-    const imageHeight = image.naturalHeight;
+    const viewerWidth = viewer.clientWidth - 20;
+    const viewerHeight = viewer.clientHeight - 20;
 
-    if (!imageWidth || !imageHeight) {
-        zoom = 1;
-    } else {
-        const scaleX = viewerWidth / imageWidth;
-        const scaleY = viewerHeight / imageHeight;
+    const scaleX = viewerWidth / image.naturalWidth;
+    const scaleY = viewerHeight / image.naturalHeight;
 
-        zoom = Math.min(scaleX, scaleY);
-    }
+    baseScale = Math.min(scaleX, scaleY);
 
+    zoom = 1;
     offsetX = 0;
     offsetY = 0;
 
     updateImage();
 }
 
-function updateImage() {
-    image.style.transform =
-        `translate(${offsetX}px, ${offsetY}px) scale(${zoom})`;
+function displayPage() {
+    image.onload = function () {
+        fitPage();
+    };
+
+    image.src = `yearbook-page-${pages[currentPage]}.jpg`;
 }
 
 function nextPage() {
@@ -58,17 +60,20 @@ function previousPage() {
 }
 
 function zoomIn() {
-    zoom = Math.min(zoom + 0.25, 4);
+    zoom = Math.min(zoom * 1.25, 5);
     updateImage();
 }
 
 function zoomOut() {
-    zoom = Math.max(zoom - 0.25, 0.5);
+    zoom = Math.max(zoom / 1.25, 1);
     updateImage();
 }
 
 function resetZoom() {
-    resetView();
+    zoom = 1;
+    offsetX = 0;
+    offsetY = 0;
+    updateImage();
 }
 
 document.getElementById("nextBtn").addEventListener("click", nextPage);
@@ -77,13 +82,23 @@ document.getElementById("zoomInBtn").addEventListener("click", zoomIn);
 document.getElementById("zoomOutBtn").addEventListener("click", zoomOut);
 document.getElementById("resetBtn").addEventListener("click", resetZoom);
 
+const fullscreenBtn = document.getElementById("fullscreenBtn");
+
+fullscreenBtn.addEventListener("click", function () {
+    if (!document.fullscreenElement) {
+        viewer.requestFullscreen();
+    } else {
+        document.exitFullscreen();
+    }
+});
+
 image.addEventListener("mousedown", function (event) {
     if (zoom <= 1) return;
 
     dragging = true;
     startX = event.clientX - offsetX;
     startY = event.clientY - offsetY;
-    image.style.cursor = "grabbing";
+    viewer.classList.add("dragging");
 });
 
 window.addEventListener("mousemove", function (event) {
@@ -97,10 +112,10 @@ window.addEventListener("mousemove", function (event) {
 
 window.addEventListener("mouseup", function () {
     dragging = false;
-    image.style.cursor = "grab";
+    viewer.classList.remove("dragging");
 });
 
-image.addEventListener("wheel", function (event) {
+viewer.addEventListener("wheel", function (event) {
     event.preventDefault();
 
     if (event.deltaY < 0) {
@@ -108,24 +123,17 @@ image.addEventListener("wheel", function (event) {
     } else {
         zoomOut();
     }
-});
+}, { passive: false });
 
 document.addEventListener("keydown", function (event) {
-    if (event.key === "ArrowRight") {
-        nextPage();
-    }
+    if (event.key === "ArrowRight") nextPage();
+    if (event.key === "ArrowLeft") previousPage();
+    if (event.key === "+") zoomIn();
+    if (event.key === "-") zoomOut();
+});
 
-    if (event.key === "ArrowLeft") {
-        previousPage();
-    }
-
-    if (event.key === "+") {
-        zoomIn();
-    }
-
-    if (event.key === "-") {
-        zoomOut();
-    }
+window.addEventListener("resize", function () {
+    fitPage();
 });
 
 displayPage();
