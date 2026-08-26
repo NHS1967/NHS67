@@ -111,7 +111,7 @@ button:disabled {
 
 .canvas img {
   display: block;
-  max-width: none;
+  max-width: 100%;
   width: auto;
   height: auto;
   user-select: none;
