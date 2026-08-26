@@ -17,9 +17,24 @@ function displayPage() {
 }
 
 function resetView() {
-    zoom = 1;
+    const viewerWidth = viewer.clientWidth;
+    const viewerHeight = viewer.clientHeight;
+
+    const imageWidth = image.naturalWidth;
+    const imageHeight = image.naturalHeight;
+
+    if (!imageWidth || !imageHeight) {
+        zoom = 1;
+    } else {
+        const scaleX = viewerWidth / imageWidth;
+        const scaleY = viewerHeight / imageHeight;
+
+        zoom = Math.min(scaleX, scaleY);
+    }
+
     offsetX = 0;
     offsetY = 0;
+
     updateImage();
 }
 
