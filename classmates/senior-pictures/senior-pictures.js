@@ -92,7 +92,7 @@ fullscreenBtn.addEventListener("click", function () {
     }
 });
 
-image.addEventListener("mousedown", function (event) {
+viewer.addEventListener("mousedown", function (event) {
    
     dragging = true;
     console.log("DRAG STARTED");
