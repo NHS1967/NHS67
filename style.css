@@ -537,3 +537,11 @@ footer {
     gap: 0;
   }
 }
+/* Missing Classmates page background */
+.missing-classmates-page {
+  background-image: url("classmates/Missing.png") !important;
+  background-size: cover !important;
+  background-position: center top !important;
+  background-repeat: no-repeat !important;
+  min-height: 100vh;
+}
