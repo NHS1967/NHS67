@@ -337,3 +337,41 @@ footer {
   display: block;
 }
 
+/* In Memoriam classmate list */
+.classmate-list {
+  max-width: 900px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 80px;
+  text-align: center;
+}
+
+.classmate-list p {
+  margin: 0;
+  padding: 8px 5px;
+  line-height: 1.4;
+}
+
+.classmate-list a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.classmate-list a:hover {
+  text-decoration: underline;
+}
+
+.contact-note {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .classmate-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+}
