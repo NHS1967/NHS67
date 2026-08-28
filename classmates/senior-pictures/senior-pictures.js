@@ -42,7 +42,7 @@ function fitPage() {
            fitPage();
     };
 document.getElementById("viewerPage").textContent = `${currentPage + 1} of ${pages.length}`;
-document.getElementById("yearbookPage").textContent = `Yearbook page ${pages[currentPage]}`;
+
     image.src = `yearbook-page-${pages[currentPage]}.jpg`;
 }
 
