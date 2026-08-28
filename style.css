@@ -553,3 +553,9 @@ footer {
   background-repeat: no-repeat !important;
   min-height: 100vh;
 }
+/* Larger, bold Missing Classmates names */
+.missing-classmate-list p {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  line-height: 1.5;
+}
