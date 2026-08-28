@@ -311,7 +311,7 @@ footer {
   top: 100%;
   left: 0;
   min-width: 230px;
-  background: rgba(20, 15, 25, .97);
+  background: transparent;
   border-radius: 6px;
   padding: 8px 0;
   box-shadow: 0 8px 20px rgba(0,0,0,.35);
