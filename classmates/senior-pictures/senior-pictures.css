@@ -94,7 +94,7 @@ button:disabled {
   overflow: hidden;
   border: 1px solid #3a3640;
   border-radius: 8px;
-  background: var(--viewer-bg);
+  background: var(--viewer-bg) url("tiger-side-pattern.png") center center / cover no-repeat;
   touch-action: none;
   cursor: grab;
 }
