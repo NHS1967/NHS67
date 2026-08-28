@@ -559,3 +559,8 @@ footer {
   font-weight: 700 !important;
   line-height: 1.5;
 }
+/* Classmates dropdown - transparent background */
+.dropdown-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
