@@ -379,3 +379,15 @@ footer {
 .in-memoriam-header {
   text-align: center;
 }
+/* Center the In Memoriam header */
+.in-memoriam-header {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.in-memoriam-header h1,
+.in-memoriam-header h2,
+.in-memoriam-header p {
+  text-align: center;
+}
