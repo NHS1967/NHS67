@@ -564,3 +564,8 @@ footer {
   background: transparent !important;
   box-shadow: none !important;
 }
+/* Classmates dropdown - transparent background */
+.dropdown-content {
+  background: transparent !important;
+  box-shadow: none !important;
+}
