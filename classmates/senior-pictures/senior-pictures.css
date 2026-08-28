@@ -157,3 +157,6 @@ button:disabled {
   width: 100% !important;
   min-height: 135px !important;
 }
+.dropdown-content.show {
+  display: block !important;
+}
