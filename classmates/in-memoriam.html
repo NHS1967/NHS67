@@ -119,6 +119,42 @@
   </section>
 
 </main>
+<script>
+const list = document.querySelector(".classmate-list");
+
+if (list) {
+  const names = Array.from(list.querySelectorAll("p"));
+
+  names.sort((a, b) => {
+    const getLastName = (element) => {
+      let name = element.textContent.trim();
+
+      // Remove suffixes such as Jr. or Sr.
+      name = name.replace(/,\s*(Jr\.|Sr\.|III|IV|II)$/i, "");
+
+      const words = name.split(/\s+/);
+
+      // Handle compound surnames such as Van Hoy
+      if (
+        words.length >= 2 &&
+        words[words.length - 2].toLowerCase() === "van"
+      ) {
+        return (
+          words[words.length - 2] +
+          " " +
+          words[words.length - 1]
+        ).toLowerCase();
+      }
+
+      return words[words.length - 1].toLowerCase();
+    };
+
+    return getLastName(a).localeCompare(getLastName(b));
+  });
+
+  names.forEach(name => list.appendChild(name));
+}
+</script>
 
 </body>
 </html>
