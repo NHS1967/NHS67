@@ -141,3 +141,11 @@ button:disabled {
   z-index: 1;
 }
 }
+/* FINAL FIX - move Senior Pictures below navigation */
+.viewer-page {
+  padding-top: 190px !important;
+}
+
+.viewer-header {
+  margin-top: 0 !important;
+}
