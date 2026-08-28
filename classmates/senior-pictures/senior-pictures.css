@@ -160,3 +160,38 @@ button:disabled {
 .dropdown-content.show {
   display: block !important;
 }
+/* CLASSMATES dropdown on Senior Pictures page */
+.navbar {
+  z-index: 1000 !important;
+}
+
+.dropdown {
+  position: relative !important;
+}
+
+.dropdown-content {
+  display: none !important;
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 230px !important;
+  background: rgba(30, 20, 40, 0.95) !important;
+  padding: 8px 0 !important;
+  border-radius: 6px !important;
+  z-index: 1001 !important;
+}
+
+.dropdown-content.show {
+  display: block !important;
+}
+
+.dropdown-content a {
+  display: block !important;
+  color: white !important;
+  padding: 12px 16px !important;
+  text-decoration: none !important;
+}
+
+.dropdown-content a:hover {
+  background: rgba(255,255,255,0.15) !important;
+}
