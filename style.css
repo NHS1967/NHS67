@@ -294,7 +294,7 @@ footer {
 
 .dropbtn {
   color: #fff;
-  background: transparent;
+  background: rgba(20, 15, 25, 0.35);
   border: 0;
   font-family: inherit;
   font-size: clamp(14px, 1.25vw, 20px);
