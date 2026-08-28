@@ -375,3 +375,7 @@ footer {
     gap: 0;
   }
 }
+/* Center In Memoriam header */
+.in-memoriam-header {
+  text-align: center;
+}
