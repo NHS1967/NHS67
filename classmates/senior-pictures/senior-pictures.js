@@ -28,7 +28,7 @@ function fitPage() {
     const scaleX = viewerWidth / image.naturalWidth;
     const scaleY = viewerHeight / image.naturalHeight;
 
-    baseScale = Math.min(scaleX, scaleY);
+    baseScale = Math.min(scaleX, scaleY, 1);
 
     zoom = 1;
     offsetX = 0;
