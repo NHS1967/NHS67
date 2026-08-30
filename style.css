@@ -601,7 +601,7 @@ footer {
 /* Classmate Information page navigation */
 body:has(.classmates-viewer) .navbar {
     position: fixed !important;
-    top: 0 !important;
+    top: 20 !important;
     left: 0 !important;
     right: 0 !important;
     z-index: 9999 !important;
