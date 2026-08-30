@@ -578,4 +578,18 @@ footer {
     color: #fff !important;
     text-shadow: 2px 2px 6px #000 !important;
 }
+.navbar .dropdown-content {
+    background: rgba(20, 15, 25, 0.98) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35) !important;
+}
+
+.navbar .dropdown-content a {
+    color: #fff !important;
+    text-shadow: none !important;
+}
+
+.navbar .dropdown-content a:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    color: #fff !important;
+}
 
