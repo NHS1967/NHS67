@@ -574,8 +574,8 @@ footer {
   background: transparent !important;
   box-shadow: none !important;
 }
-.brand-sub {
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85);
+.navbar .brand .brand-sub {
+    color: #fff !important;
+    text-shadow: 2px 2px 6px #000 !important;
 }
 
