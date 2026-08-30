@@ -298,7 +298,8 @@ footer {
 }
 /* Classmates dropdown */
 .dropdown {
-  position: relative;
+    position: relative;
+    z-index: 1000;
 }
 
 .dropbtn {
@@ -315,8 +316,11 @@ footer {
 }
 
 .dropdown-content {
-  display: none;
-  position: absolute;
+    display: none;
+    z-index: 1001;
+    pointer-events: auto;
+    position: absolute;
+  
   top: 100%;
   left: 0;
   min-width: 230px;
