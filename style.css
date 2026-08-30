@@ -43,7 +43,7 @@ body {
 
 .navbar {
   position: absolute;
-  z-index: 5;
+  z-index: 5;}
   /* Missing Classmates page background */
 .missing-classmates-page {
   background-image: url("classmates/Missing-background.png.png") !important;
