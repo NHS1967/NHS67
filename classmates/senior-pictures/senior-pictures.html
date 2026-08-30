@@ -68,5 +68,10 @@
   </main>
 
   <script src="senior-pictures.js"></script>
+  <script>
+if (new URLSearchParams(window.location.search).get("embedded") === "true") {
+    document.querySelector(".navbar").style.display = "none";
+}
+</script>
 </body>
 </html>
