@@ -574,28 +574,4 @@ footer {
   background: transparent !important;
   box-shadow: none !important;
 }
-/* Navigation visibility on light pages */
-.navbar {
-  background: rgba(20, 15, 25, 0.95);
-}
 
-.navbar .brand,
-.navbar .brand-main,
-.navbar .brand-sub,
-.navbar .nav-links a,
-.navbar .dropbtn {
-  color: #fff;
-}
-
-.navbar .dropdown-content {
-  background: rgba(20, 15, 25, 0.98);
-}
-
-.navbar .dropdown-content a {
-  color: #fff;
-}
-
-.navbar .dropdown-content a:hover {
-  background: rgba(255, 255, 255, 0.12);
-  color: #fff;
-}
