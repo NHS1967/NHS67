@@ -642,5 +642,5 @@ body:has(.classmates-viewer) .navbar {
 /* Add visible space before each item */
 .navbar .nav-links > .dropdown,
 .navbar .nav-links > a:not(:first-child) {
-  margin-left: 45px !important;
+  margin-left: 100px !important;
 }
