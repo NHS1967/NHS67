@@ -637,3 +637,12 @@ body:has(.classmates-viewer) .navbar {
 .navbar .nav-links > .dropdown {
   margin-right: 0 !important;
 }
+/* Final spacing between main navigation items */
+.navbar .nav-links > a,
+.navbar .nav-links > .dropdown {
+  margin-right: 45px !important;
+}
+
+.navbar .nav-links > a:last-child {
+  margin-right: 0 !important;
+}
