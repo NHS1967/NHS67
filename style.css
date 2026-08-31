@@ -608,3 +608,14 @@ body:has(.classmates-viewer) .navbar {
     z-index: 9999 !important;
     display: flex !important;
 }
+/* Keep Classmates menu items vertical */
+.navbar .dropdown-content {
+    display: none !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+}
+
+.navbar .dropdown:hover .dropdown-content,
+.navbar .dropdown:focus-within .dropdown-content {
+    display: flex !important;
+}
