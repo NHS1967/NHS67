@@ -99,6 +99,9 @@ body {
   align-items: center;
   gap: 50px;
   padding: 5px 0 0 50px;
+}.nav-links > a,
+.nav-links > .dropdown {
+  margin-right: 25px;
 }
 
 .nav-links a {
