@@ -619,3 +619,9 @@ body:has(.classmates-viewer) .navbar {
 .navbar .dropdown:focus-within .dropdown-content {
     display: flex !important;
 }
+/* Classmate Information page header */
+.classmate-header {
+  position: relative;
+  min-height: 135px;
+  background: transparent;
+}
