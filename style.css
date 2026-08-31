@@ -689,3 +689,26 @@ body:has(.classmates-viewer) .navbar {
 .reunion-section p {
   text-align: center;
 }
+/* Clickable Submit button inside Memories graphic */
+
+.memory-poster {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.memory-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.memory-poster-button {
+  position: absolute;
+  left: 9%;
+  top: 82%;
+  width: 82%;
+  height: 9%;
+  display: block;
+  cursor: pointer;
+}
