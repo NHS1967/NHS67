@@ -629,3 +629,15 @@ body:has(.classmates-viewer) .navbar {
   min-height: 135px;
   background: transparent;
 } 
+/* Fine-tune spacing after CLASSMATES */
+.navbar .nav-links > .dropdown {
+  margin-right: 35px !important;
+}
+
+.navbar .nav-links > a {
+  margin-right: 35px !important;
+}
+
+.navbar .nav-links > a:last-child {
+  margin-right: 0 !important;
+}
