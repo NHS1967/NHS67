@@ -41,7 +41,6 @@ function fitPage() {
         image.onload = function () {
            fitPage();
     };
-document.getElementById("viewerPage").textContent = `${currentPage + 1} of ${pages.length}`;
 
     image.src = `yearbook-page-${pages[currentPage]}.jpg`;
 }
