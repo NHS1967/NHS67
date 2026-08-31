@@ -641,3 +641,51 @@ body:has(.classmates-viewer) .navbar {
 .navbar .nav-links > a:last-child {
   margin-right: 0 !important;
 }
+/* Center Memories page content */
+
+.memory-call {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.memory-call img {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  margin: 0 auto 30px;
+}
+
+.memory-call-button {
+  text-align: center;
+  margin: 25px auto;
+}
+
+.memory-call-button a {
+  display: inline-block;
+}
+
+.memory-email {
+  max-width: 800px;
+  margin: 35px auto;
+  text-align: center;
+}
+
+.memory-email h2,
+.memory-email p {
+  text-align: center;
+}
+
+.reunion-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.reunion-section h2,
+.reunion-section p {
+  text-align: center;
+}
