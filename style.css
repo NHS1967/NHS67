@@ -95,7 +95,7 @@ body {
 .nav-links {
   flex: 1;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 20px;
   padding: 5px 0 0 50px;
