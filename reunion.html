@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NHS67 | 60th Reunion</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Reunion Page */
+    .reunion-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 25px 70px;
+    }
+
+    .reunion-intro {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .reunion-intro h1 {
+      margin-bottom: 10px;
+    }
+
+    .reunion-intro h2 {
+      margin-top: 0;
+    }
+
+    .reunion-intro p {
+      max-width: 850px;
+      margin: 15px auto;
+      line-height: 1.7;
+    }
+
+    .reunion-section {
+      margin: 45px 0;
+      padding: 30px;
+      background: #f7f7f7;
+      border-radius: 10px;
+    }
+
+    .reunion-section h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    .event-card {
+      background: white;
+      padding: 30px;
+      margin: 25px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .event-card h3 {
+      margin-top: 0;
+    }
+
+    .event-details {
+      line-height: 1.8;
+    }
+
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .map-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .map-card h3 {
+      padding: 20px 20px 5px;
+      margin: 0;
+    }
+
+    .map-card p {
+      padding: 0 20px;
+      line-height: 1.5;
+    }
+
+    .map-card iframe {
+      display: block;
+      width: 100%;
+      height: 260px;
+      border: 0;
+    }
+
+    .directions-button,
+    .reservation-button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 12px 22px;
+      background: #333;
+      color: white !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .reservation-button {
+      font-size: 1.1em;
+      padding: 14px 28px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .important-note {
+      padding: 20px;
+      margin-top: 20px;
+      background: #fff;
+      border-left: 5px solid #555;
+      line-height: 1.7;
+    }
+
+    .future-event {
+      text-align: center;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    .rsvp-box {
+      text-align: center;
+      background: white;
+      padding: 35px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) {
+      .map-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .reunion-page {
+        padding: 25px 15px 50px;
+      }
+
+      .reunion-section {
+        padding: 20px;
+      }
+
+      .event-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="classmate-header">
+
+  <nav class="navbar" aria-label="Main navigation" style="z-index: 1000;">
+
+    <a class="brand" href="index.html" aria-label="NHS67 Home">
+      <span class="brand-main">NHS<span>67</span></span>
+      <span class="brand-sub">NORTHSIDE HIGH SCHOOL<br>CLASS OF 1967</span>
+    </a>
+
+    <div class="nav-links">
+
+      <a href="index.html">HOME</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">CLASSMATES</button>
+
+        <div class="dropdown-content">
+          <a href="classmates/senior-pictures/senior-pictures.html">SENIOR PICTURES</a>
+          <a href="classmates/in-memoriam.html">IN MEMORIAM</a>
+          <a href="classmates/missing-classmates.html">MISSING CLASSMATES</a>
+          <a href="classmates/classmate-information.html">CLASSMATE INFORMATION</a>
+        </div>
+      </div>
+
+      <a href="reunion.html">REUNION</a>
+      <a href="memories.html">MEMORIES</a>
+      <a href="chat.html">CHAT</a>
+      <a href="media.html">MEDIA</a>
+      <a href="contact.html">CONTACT</a>
+
+    </div>
+  </nav>
+
+</header>
+
+<main class="reunion-page">
+
+  <!-- INTRODUCTION -->
+
+  <section class="reunion-intro">
+
+    <h1>Northside High School Class of 1967</h1>
+
+    <h2>60th Reunion</h2>
+
+    <p>
+      <strong>Atlanta, Georgia • April 17–18, 2027</strong>
+    </p>
+
+    <p>
+      We're looking forward to getting together again for our
+      60th Reunion. Plans are taking shape, and this page will be
+      updated as additional details become available.
+    </p>
+
+    <p>
+      The events below are the currently scheduled reunion activities.
+      We also welcome classmates who would like to organize additional
+      activities during the reunion weekend.
+    </p>
+
+  </section>
+
+
+  <!-- REUNION WEEKEND MAP -->
+
+  <section class="reunion-section">
+
+    <h2>Reunion Weekend Locations</h2>
+
+    <p class="center">
+      Use the interactive maps below to explore the three primary
+      reunion locations.
+    </p>
+
+    <div class="map-grid">
+
+      <!-- HOTEL -->
+
+      <div class="map-card">
+
+        <h3>Reunion Hotel</h3>
+
+        <p>
+          <strong>InterContinental Buckhead Atlanta</strong><br>
+          3315 Peachtree Road NE<br>
+          Atlanta, GA 30326
+        </p>
+
+        <iframe
+          src="https://www.google.com/maps?q=InterContinental+Buckhead+Atlanta,+3315+Peachtree+Road+NE,+Atlanta,+GA+30326&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+        <p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/dir/?api=1&destination=InterContinental+Buckhead+Atlanta,+3315+Peachtree+Road+NE,+Atlanta,+GA+30326"
+            target="_blank"
+            rel="noopener">
+            GET DIRECTIONS
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- SATURDAY -->
+
+      <div class="map-card">
+
+        <h3>Saturday BBQ</h3>
+
+        <p>
+          <strong>Garden Hills Recreation Center</strong><br>
+          339 Pine Tree Drive<br>
+          Atlanta, GA
+        </p>
+
+        <iframe
+          src="https://www.google.com/maps?q=Garden+Hills+Recreation+Center,+339+Pine+Tree+Drive,+Atlanta,+GA&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+        <p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/dir/?api=1&destination=Garden+Hills+Recreation+Center,+339+Pine+Tree+Drive,+Atlanta,+GA"
+            target="_blank"
+            rel="noopener">
+            GET DIRECTIONS
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- SUNDAY -->
+
+      <div class="map-card">
+
+        <h3>Sunday Brunch</h3>
+
+        <p>
+          <strong>Cross Creek Cafe</strong><br>
+          1221 Cross Creek Parkway<br>
+          Atlanta, GA 30327
+        </p>
+
+        <iframe
+          src="https://www.google.com/maps?q=Cross+Creek+Cafe,+1221+Cross+Creek+Parkway,+Atlanta,+GA+30327&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+
+        <p>
+          <a
+            class="directions-button"
+            href="https://www.google.com/maps/dir/?api=1&destination=Cross+Creek+Cafe,+1221+Cross+Creek+Parkway,+Atlanta,+GA+30327"
+            target="_blank"
+            rel="noopener">
+            GET DIRECTIONS
+          </a>
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SATURDAY BBQ -->
+
+  <section class="reunion-section">
+
+    <div class="event-card">
+
+      <h2>Saturday, April 17, 2027</h2>
+
+      <h3>Class Reunion Barbecue</h3>
+
+      <div class="event-details">
+
+        <p>
+          <strong>4:00 PM – 10:00 PM</strong>
+        </p>
+
+        <p>
+          <strong>Garden Hills Recreation Center</strong><br>
+          339 Pine Tree Drive<br>
+          Atlanta, GA
+        </p>
+
+        <p>
+          <strong>Dress: Casual</strong>
+        </p>
+
+        <p>
+          Come relax, reconnect and enjoy an evening together
+          with your classmates.
+        </p>
+
+        <p>
+          <strong>Beverages:</strong> Iced tea and water will be provided.
+          Feel free to bring a cooler with any other beverages you'd like.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SUNDAY BRUNCH -->
+
+  <section class="reunion-section">
+
+    <div class="event-card">
+
+      <h2>Sunday, April 18, 2027</h2>
+
+      <h3>Reunion Brunch</h3>
+
+      <div class="event-details">
+
+        <p>
+          <strong>11:00 AM</strong>
+        </p>
+
+        <p>
+          <strong>Cross Creek Cafe</strong><br>
+          1221 Cross Creek Parkway<br>
+          Atlanta, GA 30327
+        </p>
+
+        <p>
+          <strong>Dress: Casual</strong>
+        </p>
+
+        <p>
+          We'll gather for brunch and one more opportunity
+          to catch up before heading home.
+        </p>
+
+        <p>
+          <strong>Bar:</strong> Alcohol will be available for purchase
+          at the bar.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOTEL -->
+
+  <section class="reunion-section">
+
+    <h2>Reunion Hotel</h2>
+
+    <div class="event-card">
+
+      <h3>Special Reunion Hotel Rate</h3>
+
+      <p>
+        We've negotiated a special room rate for reunion attendees.
+      </p>
+
+      <div class="important-note">
+
+        <p>
+          <strong>Cancellation Policy:</strong>
+          Cancellation is permitted up to 48 hours prior to arrival.
+        </p>
+
+        <p>
+          Given this generous cancellation policy, please book your
+          room as soon as possible. The hotel may need to increase
+          the number of rooms in our block.
+        </p>
+
+        <p>
+          <strong>
+            Your credit card will not be charged when you book your room.
+          </strong>
+          A credit card is required to hold your room.
+        </p>
+
+      </div>
+
+      <div class="center">
+
+        <a
+          class="reservation-button"
+          href="https://book.passkey.com/go/NorthsideHighSchool60thReunion"
+          target="_blank"
+          rel="noopener">
+          BOOK YOUR REUNION ROOM
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OTHER ACTIVITIES -->
+
+  <section class="reunion-section">
+
+    <h2>Other Reunion Weekend Activities</h2>
+
+    <div class="future-event">
+
+      <h3>Want to Organize Something?</h3>
+
+      <p>
+        The Saturday barbecue and Sunday brunch are the currently
+        scheduled reunion events, but classmates are welcome to
+        organize additional activities during the weekend.
+      </p>
+
+      <p>
+        Golf outings, dinners, sightseeing, lunches, small gatherings,
+        or other activities are welcome.
+      </p>
+
+      <p>
+        If you'd like to organize an activity, let us know.
+        We can post the details here so other classmates have an
+        opportunity to participate.
+      </p>
+
+      <p>
+        <strong>More activities coming soon!</strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- HEADCOUNT -->
+
+  <section class="reunion-section">
+
+    <h2>Help Us Plan — Reunion Headcount</h2>
+
+    <div class="rsvp-box">
+
+      <h3>Will You Be Joining Us?</h3>
+
+      <p>
+        We're in the early planning stages, and your response will
+        help us determine the cost per person for the reunion weekend.
+      </p>
+
+      <p>
+        If you will be coming with someone, we need that information
+        as well so that we can get an accurate headcount.
+      </p>
+
+      <p>
+        <strong>
+          Please watch for the Reunion RSVP form, which will be added
+          here as soon as it is ready.
+        </strong>
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- FUTURE UPDATES -->
+
+  <section class="reunion-section">
+
+    <h2>Reunion Updates</h2>
+
+    <div class="future-event">
+
+      <p>
+        This page will evolve as reunion plans come together.
+        Additional events, schedules, activities, announcements,
+        and other important information will be posted here.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <p>NHS67 • Northside High School • Class of 1967</p>
+</footer>
+
+</body>
+</html>
