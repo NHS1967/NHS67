@@ -628,3 +628,12 @@ body:has(.classmates-viewer) .navbar {
   min-height: 135px;
   background: transparent;
 }
+/* Final main navigation spacing */
+.navbar .nav-links {
+  gap: 35px !important;
+}
+
+.navbar .nav-links > a,
+.navbar .nav-links > .dropdown {
+  margin-right: 0 !important;
+}
