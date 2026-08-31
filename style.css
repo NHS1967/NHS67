@@ -629,19 +629,42 @@ body:has(.classmates-viewer) .navbar {
   background: transparent;
 }
 /* Main navigation spacing */
+/* Final main navigation spacing */
 .navbar .nav-links {
   gap: 0 !important;
 }
 
 .navbar .nav-links > a,
 .navbar .nav-links > .dropdown {
+  margin: 0 !important;
+}
+
+/* Space after HOME */
+.navbar .nav-links > a:first-child {
   margin-right: 35px !important;
 }
 
+/* Space after CLASSMATES */
 .navbar .nav-links > .dropdown {
+  margin-right: 55px !important;
+}
+
+/* Space after MEMORIES */
+.navbar .nav-links > a:nth-of-type(2) {
   margin-right: 45px !important;
 }
 
-.navbar .nav-links > a:last-child {
+/* Space after CHAT */
+.navbar .nav-links > a:nth-of-type(3) {
+  margin-right: 45px !important;
+}
+
+/* Space after MEDIA */
+.navbar .nav-links > a:nth-of-type(4) {
+  margin-right: 45px !important;
+}
+
+/* CONTACT */
+.navbar .nav-links > a:nth-of-type(5) {
   margin-right: 0 !important;
-} 
+}
