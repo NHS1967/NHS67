@@ -712,3 +712,61 @@ body:has(.classmates-viewer) .navbar {
   display: block;
   cursor: pointer;
 }
+
+
+
+/* Contact Page */
+
+.contact-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 30px;
+  text-align: center;
+}
+
+.contact-page h1 {
+  text-align: center;
+}
+
+.contact-page p {
+  text-align: center;
+}
+
+.contact-button {
+  display: inline-block;
+  margin: 25px auto 40px;
+  padding: 15px 35px;
+  background: #4B237C;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.contact-button:hover {
+  opacity: 0.85;
+}
+
+.contact-tiger {
+  text-align: center;
+  margin: 20px auto 40px;
+}
+
+.contact-tiger img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.media-tribe-credit {
+  text-align: center;
+  margin: 30px auto;
+}
+
+.media-tribe-credit a {
+  color: #4B237C;
+  font-weight: bold;
+}
