@@ -39,7 +39,8 @@
     </p>
 
 
-    <div class="classmate-list">
+    <!-- TWO COLUMN LAYOUT - ALL OTHER STYLING REMAINS FROM style.css -->
+    <div class="classmate-list two-column-list">
 
       <p>
         Albert Benjamin Sprouse, Jr.
@@ -438,6 +439,30 @@
   </section>
 
 </main>
+
+
+<!-- Two-column layout only.
+     Font, colors, background, links and other styling
+     continue to come from the existing style.css. -->
+
+<style>
+.two-column-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 60px;
+}
+
+.two-column-list p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .two-column-list {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 
 
 <script>
